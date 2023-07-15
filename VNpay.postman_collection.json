@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "3edb94a3-960c-4e50-b51f-86c444900fbb",
+		"name": "VNpay",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18348820",
+		"_collection_link": "https://planetary-shuttle-898216.postman.co/workspace/My-Workspace~25c0b397-a110-4b7b-80df-57d98c35a212/collection/18348820-3edb94a3-960c-4e50-b51f-86c444900fbb?action=share&creator=18348820&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "VNPay",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/payment/create_payment?orderTotal=300000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"payment",
+						"create_payment"
+					],
+					"query": [
+						{
+							"key": "orderTotal",
+							"value": "300000"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

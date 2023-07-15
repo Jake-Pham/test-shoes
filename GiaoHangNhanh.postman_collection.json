@@ -1,0 +1,258 @@
+{
+	"info": {
+		"_postman_id": "05794358-563f-4417-b2cd-675018ed3efa",
+		"name": "GiaoHangNhanh",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18348820",
+		"_collection_link": "https://planetary-shuttle-898216.postman.co/workspace/My-Workspace~25c0b397-a110-4b7b-80df-57d98c35a212/collection/18348820-05794358-563f-4417-b2cd-675018ed3efa?action=share&creator=18348820&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Province",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"value": "9524d88b-1a71-11ee-8506-6ead57e9219a",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://online-gateway.ghn.vn/shiip/public-api/master-data/province",
+					"protocol": "https",
+					"host": [
+						"online-gateway",
+						"ghn",
+						"vn"
+					],
+					"path": [
+						"shiip",
+						"public-api",
+						"master-data",
+						"province"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "District",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "9524d88b-1a71-11ee-8506-6ead57e9219a",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"province_id\":269\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://online-gateway.ghn.vn/shiip/public-api/master-data/district",
+					"protocol": "https",
+					"host": [
+						"online-gateway",
+						"ghn",
+						"vn"
+					],
+					"path": [
+						"shiip",
+						"public-api",
+						"master-data",
+						"district"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ward",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "9524d88b-1a71-11ee-8506-6ead57e9219a",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"district_id\":1682\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://online-gateway.ghn.vn/shiip/public-api/master-data/ward",
+					"protocol": "https",
+					"host": [
+						"online-gateway",
+						"ghn",
+						"vn"
+					],
+					"path": [
+						"shiip",
+						"public-api",
+						"master-data",
+						"ward"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Expected Delivery Time",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"value": "9524d88b-1a71-11ee-8506-6ead57e9219a",
+						"type": "text"
+					},
+					{
+						"key": "ShopId",
+						"value": "4314629",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"from_district_id\": 3695,\r\n    \"from_ward_code\": \"90743\",\r\n    \"to_district_id\": 1534,\r\n    \"to_ward_code\": \"22307\",\r\n    \"service_id\": 53321\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://online-gateway.ghn.vn/shiip/public-api/v2/shipping-order/leadtime",
+					"protocol": "https",
+					"host": [
+						"online-gateway",
+						"ghn",
+						"vn"
+					],
+					"path": [
+						"shiip",
+						"public-api",
+						"v2",
+						"shipping-order",
+						"leadtime"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Service - Shipping Method",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "9524d88b-1a71-11ee-8506-6ead57e9219a",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"shop_id\":4314629,\r\n\t\"from_district\": 3695,\r\n\t\"to_district\": 1534\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://online-gateway.ghn.vn/shiip/public-api/v2/shipping-order/available-services\n",
+					"protocol": "https",
+					"host": [
+						"online-gateway",
+						"ghn",
+						"vn"
+					],
+					"path": [
+						"shiip",
+						"public-api",
+						"v2",
+						"shipping-order",
+						"available-services\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calculate Shipping Fee",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "9524d88b-1a71-11ee-8506-6ead57e9219a",
+						"type": "text"
+					},
+					{
+						"key": "ShopId",
+						"value": "4314629",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"service_id\":53321,\r\n    \"from_district_id\":3695,\r\n    \"to_district_id\":1682,\r\n    \"to_ward_code\":\"80107\",\r\n    \"height\":12,\r\n    \"length\":34,\r\n    \"weight\":2500,\r\n    \"width\":25\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://online-gateway.ghn.vn/shiip/public-api/v2/shipping-order/fee",
+					"protocol": "https",
+					"host": [
+						"online-gateway",
+						"ghn",
+						"vn"
+					],
+					"path": [
+						"shiip",
+						"public-api",
+						"v2",
+						"shipping-order",
+						"fee"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
